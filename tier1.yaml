@@ -1,0 +1,4 @@
+inputs:
+  - name: example-data
+    metadata: data/example_metadata.tsv
+    sequences: data/example_sequences.fasta.gz

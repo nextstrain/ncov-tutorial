@@ -1,0 +1,22 @@
+inputs:
+  - name: example-data
+    metadata: data/example_metadata.tsv
+    sequences: data/example_sequences.fasta.gz
+  - name: your-data
+    metadata: data/your_metadata.tsv
+    sequences: data/your_sequences.fasta.gz
+
+builds:
+  your-build-name:
+    region: Region
+    country: Country
+    subsampling_scheme: custom_scheme
+
+subsampling:
+  custom_scheme:
+    focal:
+      max_sequences: 100
+      query: "(region == '{region}') & (country == '{country}')"
+    contextual:
+      max_sequences: 100
+      query: "(country != '{country}')"

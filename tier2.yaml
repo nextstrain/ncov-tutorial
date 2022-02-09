@@ -1,0 +1,12 @@
+inputs:
+  - name: example-data
+    metadata: data/example_metadata.tsv
+    sequences: data/example_sequences.fasta.gz
+  - name: your-data
+    metadata: data/your_metadata.tsv
+    sequences: data/your_sequences.fasta.gz
+
+builds:
+  your-build-name:
+    region: Region
+    country: Country
