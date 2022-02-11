@@ -1,4 +1,4 @@
 inputs:
-  - name: example-data
-    metadata: data/example_metadata.tsv
-    sequences: data/example_sequences.fasta.gz
+  - name: reference-data
+    metadata: https://data.nextstrain.org/files/ncov/open/reference/metadata.tsv.xz
+    sequences: https://data.nextstrain.org/files/ncov/open/reference/sequences.fasta.xz
