@@ -12,6 +12,10 @@ inputs:
     metadata: https://data.nextstrain.org/files/ncov/open/north-america/metadata.tsv.xz
     aligned: https://data.nextstrain.org/files/ncov/open/north-america/aligned.fasta.xz
 
+# GenBank data includes "Wuhan-Hu-1/2019" which we use as the root for this build.
+refine:
+  root: "Wuhan-Hu-1/2019"
+
 # Define a single build for the state of interest, Idaho.
 # The build name will be "idaho" and it will use the custom
 # subsampling scheme defined below.
@@ -21,7 +25,8 @@ builds:
     subsampling_scheme: idaho_scheme
     # Defines colorings for input data sources
     # (e.g. "background-data" is "yes" or "no").
-    auspice_config: auspice_config_genomic_surveillance.json
+    # TODO: enable
+    # auspice_config: auspice_config_genomic_surveillance.json
 
 # Define a single subsampling scheme for the state of Idaho.
 # This analysis is for a specific date range, so we specify
@@ -37,7 +42,7 @@ subsampling:
     # column named "usa". The same record will have a column
     # for the "nextregions" input with a value of "no".
     custom_sample:
-      query: --query "(custom-data == 'yes')"
+      query: --query "(\`custom-data\` == 'yes')"
       # Limit the number of Idaho records included in the
       # analysis to a reasonable but large number. Tune this
       # number alone with the other "max_sequences" in the
@@ -50,7 +55,7 @@ subsampling:
     # strains that are genetically similar to the strains in
     # the "idaho" subsampling set defined above.
     usa_context:
-      query: --query "(custom-data != 'yes') & (country == 'USA')"
+      query: --query "(\`custom-data\` != 'yes') & (country == 'USA')"
       # This value sets a hard upper limit on how many strains
       # make it into the analysis. Tune this value, based on
       # your needs for the resulting tree.
@@ -62,18 +67,18 @@ subsampling:
       group_by: division year month
       priorities:
         type: proximity
-        focus: idaho_focal
+        focus: custom_sample
     # Select a subset of data from the "background-data" for
     # context. This example prioritizes strains that are
     # genetically related to the "idaho" subsampling set, but
     # you can remove the "priorities" block to get a random
     # global context instead.
     global_context:
-      query: --query "(background-data == 'yes')"
+      query: --query "(\`background-data\` == 'yes')"
       # As with the contextual data from the USA above, tune 
       # this value to get a reasonable number of strains in
       # your build.
       max_sequences: 1000
       priorities:
         type: proximity
-        focus: idaho_focal
+        focus: custom_sample
