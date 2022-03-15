@@ -1,8 +1,8 @@
 inputs:
-  - name: reference-data
+  - name: reference_data
     metadata: https://data.nextstrain.org/files/ncov/open/reference/metadata.tsv.xz
     sequences: https://data.nextstrain.org/files/ncov/open/reference/sequences.fasta.xz
-  - name: custom-data
+  - name: custom_data
     metadata: data/custom.metadata.tsv
     sequences: data/custom.sequences.fasta
 

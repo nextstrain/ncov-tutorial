@@ -1,5 +1,5 @@
 inputs:
-  - name: reference-data
+  - name: reference_data
     metadata: https://data.nextstrain.org/files/ncov/open/reference/metadata.tsv.xz
     sequences: https://data.nextstrain.org/files/ncov/open/reference/sequences.fasta.xz
 
