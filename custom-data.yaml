@@ -10,4 +10,9 @@ inputs:
 refine:
   root: "Wuhan-Hu-1/2019"
 
-default_build_name: reference-with-custom-data
+builds:
+  custom-build:
+    title: "Build with custom data and example data"
+    # Defines colorings for input data sources
+    # More at https://docs.nextstrain.org/projects/ncov/en/latest/analysis/customizing-visualization.html
+    auspice_config: ncov-tutorial/auspice-config-custom-data.json
