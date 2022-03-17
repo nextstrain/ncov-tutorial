@@ -25,8 +25,7 @@ builds:
     subsampling_scheme: idaho_scheme
     # Defines colorings for input data sources
     # (e.g. "background_data" is "yes" or "no").
-    # TODO: enable
-    # auspice_config: auspice_config_genomic_surveillance.json
+    auspice_config: ncov-tutorial/auspice-config-custom-data.json
 
 # Define a single subsampling scheme for the state of Idaho.
 # This analysis is for a specific date range, so we specify
