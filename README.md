@@ -1,5 +1,18 @@
 # ncov-tutorial
 
-Future home of ncov tutorial configuration files
+<!-- TODO: update links -->
 
-* [NCBI Virus SARS-CoV-2 Data Hub](https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&VirusLineage_ss=Severe%20acute%20respiratory%20syndrome%20coronavirus%202,%20taxid:2697049&USAState_s=HI&CollectionDate_dr=2021-11-20T00:00:00.00Z%20TO%202021-12-01T23:59:59.00Z)
+File paths in the [config files] must start with the [analysis directory]. For example, in the tutorial:
+
+```yaml
+auspice_config: ncov-tutorial/auspice-config-custom-data.json
+```
+
+Now that you have created your own analysis directory, this must be modified, e.g.
+
+```yaml
+auspice_config: my-ncov-analyses/auspice-config-custom-data.json
+```
+
+[config files]: https://nextstrain--894.org.readthedocs.build/projects/ncov/en/894/reference/glossary.html#term-config-file
+[analysis directory]: https://nextstrain--894.org.readthedocs.build/projects/ncov/en/894/reference/glossary.html#term-analysis-directory
