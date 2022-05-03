@@ -3,7 +3,15 @@
     {
       "key": "custom_data",
       "title": "Custom data",
-      "type": "categorical"
+      "type": "categorical",
+      "legend": [
+        {"value": "no"},
+        {"value": "yes"}
+      ],
+      "scale": [
+        ["no", "#4c90c0"],
+        ["yes", "#cbb742"]
+      ]
     }
   ],
   "display_defaults": {
