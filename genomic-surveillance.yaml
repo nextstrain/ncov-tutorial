@@ -1,3 +1,5 @@
+# Format reference: <https://docs.nextstrain.org/projects/ncov/page/reference/workflow-config-file.html>
+
 # Define our input data, assigning a name to each dataset.
 # We will reference these names in the subsampling scheme
 # below, as a way to select specific strains for the analysis.
